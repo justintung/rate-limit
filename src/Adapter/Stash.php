@@ -30,7 +30,7 @@ class Stash extends Adapter
         if ($item->isHit()) {
             return $item->get();
         }
-        return null;
+        return (float) 0;
     }
 
     public function set($key, $value, $ttl)
