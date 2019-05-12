@@ -18,7 +18,6 @@ services:
 before_script:
   - phpenv config-rm xdebug.ini || true
   - echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - echo yes | pecl install apcu 
   - phpenv config-add tests/php.ini
 
 install:
