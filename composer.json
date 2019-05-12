@@ -14,7 +14,8 @@
     "predis/predis": "^1.1",
     "psr/cache": "^1.0",
     "tedivm/stash": "^0.14",
-    "vimeo/psalm": "*"
+    "vimeo/psalm": "*",
+    "phpstan/phpstan": "*"
   },
   "suggest": {
     "tedivm/stash": "^0.14",
@@ -41,8 +42,9 @@
     }
   },
   "scripts": {
-    "build" : [ "@lint", "@check-format", "@psalm", "@test" ],
+    "build" : [ "@lint", "@check-format", "@psalm", "@phpstan", "@test" ],
     "psalm" : "@php ./vendor/bin/psalm src",
+    "phpstan" : "@php vendor/bin/phpstan analyse --level 6 src",
     "lint": "@php ./vendor/bin/parallel-lint --exclude vendor/ .",
     "check-format": "@php ./vendor/bin/php-cs-fixer fix --ansi --dry-run --diff",
     "format": "@php ./vendor/bin/php-cs-fixer fix --ansi",
