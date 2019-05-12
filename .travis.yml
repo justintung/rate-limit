@@ -13,9 +13,9 @@ services:
   - redis-server
 
 before_script:
-  - if [[ $TRAVIS_PHP_VERSION = 7.1 ]] ; then pecl config-set preferred_state beta; echo yes | pecl install apcu || true ; echo yes | pecl install memcached || true ; fi; 
-  - if [[ $TRAVIS_PHP_VERSION = 7.2 ]] ; then pecl config-set preferred_state beta; echo yes | pecl install apcu || true ; echo yes | pecl install memcached || true ; fi; 
-  - if [[ $TRAVIS_PHP_VERSION = 7.3 ]] ; then pecl config-set preferred_state beta; echo yes | pecl install apcu || true ; echo yes | pecl install memcached || true fi; 
+  - pecl config-set preferred_state beta
+  - echo yes | pecl install apcu 
+  - echo yes | pecl install memcached 
   - phpenv config-add tests/php.ini
 
 install:
