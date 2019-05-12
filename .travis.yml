@@ -1,3 +1,5 @@
+dist: xenial
+
 language: php
 php:
   - 7.1
@@ -11,11 +13,12 @@ cache:
 
 services:
   - redis-server
+  - memcached
 
 before_script:
-  - pecl config-set preferred_state beta
+  - phpenv config-rm xdebug.ini || true
+  - echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - echo yes | pecl install apcu 
-  - echo yes | pecl install memcached 
   - phpenv config-add tests/php.ini
 
 install:
