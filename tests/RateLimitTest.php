@@ -65,8 +65,14 @@ class RateLimitTest extends TestCase
 
     public function testCheckPredis()
     {
-        $predis = new \Predis\Client();
-        $predis->connect("localhost");
+        $predis = new \Predis\Client(
+            [
+                'scheme' => 'tcp',
+                'host' => '127.0.0.1',
+                'port' => 6379,
+                'cluster' => false,
+                'database' => 1
+            ]);
         $predis->flushdb(); // clear redis db.
         $adapter = new Adapter\Predis($predis);
         $this->check($adapter);
@@ -97,7 +103,7 @@ class RateLimitTest extends TestCase
         $label = uniqid("label", true); // should stop storage conflicts if tests are running in parallel.
         $rateLimit = $this->getRateLimit($adapter);
 
-        $rateLimit->purge($label); // make sure a previous failed test doesn't mess up this one.
+        $rateLimit->purge($label); // make sure a previous failed test doesn't mess up this one .
 
         $this->assertEquals(self::MAX_REQUESTS, $rateLimit->getAllowance($label));
 
