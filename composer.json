@@ -10,7 +10,7 @@
     "friendsofphp/php-cs-fixer": "^2.7",
     "jakub-onderka/php-parallel-lint": "^1.0",
     "php" : ">7.0",
-    "phpunit/phpunit": "^6.0",
+    "phpunit/phpunit": "^7.0",
     "predis/predis": "^1.1",
     "psr/cache": "^1.0",
     "tedivm/stash": "^0.14",
