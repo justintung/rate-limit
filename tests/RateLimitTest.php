@@ -72,7 +72,8 @@ class RateLimitTest extends TestCase
                 'port' => 6379,
                 'cluster' => false,
                 'database' => 1
-            ]);
+            ]
+        );
         $predis->flushdb(); // clear redis db.
         $adapter = new Adapter\Predis($predis);
         $this->check($adapter);
