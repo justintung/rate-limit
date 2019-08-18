@@ -38,7 +38,7 @@ $adapter = new APCAdapter(); // Use APC as Storage
 //
 // $adapter = new RedisAdapter((new \Redis()->connect('localhost'))); // Use Redis as Storage
 //
-// $adapter = new PredisAdapter((new \Predis\Predis())->connect('localhost')); // Use Predis as Storage
+// $adapter = new PredisAdapter(new \Predis\Predis(['tcp://127.0.0.1:6379'])); // Use Predis as Storage
 //
 // $memcache = new \Memcached();
 // $memcache->addServer('localhost', 11211);
