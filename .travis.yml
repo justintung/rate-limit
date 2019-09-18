@@ -17,7 +17,6 @@ services:
 
 before_script:
   - phpenv config-rm xdebug.ini || true
-  - (php -m | grep -q memcached) || (echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini)
   - phpenv config-add tests/php.ini
 
 install:
