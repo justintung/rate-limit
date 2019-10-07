@@ -12,7 +12,7 @@ abstract class Adapter
      * @return bool
      * @param string $key
      * @param float $value
-     * @param int $ttl
+     * @param int $ttl - seconds after which this entry will expire e.g 50
      */
     abstract public function set($key, $value, $ttl);
     
