@@ -19,6 +19,12 @@ class Predis extends \PalePurple\RateLimit\Adapter
     }
 
 
+    /**
+     * @param string $key
+     * @param float $value
+     * @param int $ttl
+     * @return bool
+     */
     public function set($key, $value, $ttl)
     {
         return $this->redis->set($key, (string) $value, "ex", $ttl);
@@ -26,6 +32,7 @@ class Predis extends \PalePurple\RateLimit\Adapter
 
     /**
      * @return float
+     * @param string $key
      */
     public function get($key)
     {

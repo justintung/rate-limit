@@ -14,15 +14,17 @@ class Redis extends \PalePurple\RateLimit\Adapter
      */
     protected $redis;
 
-    /**
-     * Redis constructor.
-     * @param \Redis $redis
-     */
     public function __construct(\Redis $redis)
     {
         $this->redis = $redis;
     }
 
+    /**
+     * @param string $key
+     * @param float $value
+     * @param int $ttl
+     * @return bool
+     */
     public function set($key, $value, $ttl)
     {
         return $this->redis->set($key, (string)$value, $ttl);
@@ -30,17 +32,26 @@ class Redis extends \PalePurple\RateLimit\Adapter
 
     /**
      * @return float
+     * @param string $key
      */
     public function get($key)
     {
         return (float)$this->redis->get($key);
     }
 
+    /**
+     * @param string $key
+     * @return bool
+     */
     public function exists($key)
     {
         return $this->redis->exists($key) == true;
     }
 
+    /**
+     * @param string $key
+     * @return  bool
+     */
     public function del($key)
     {
         return $this->redis->del($key) > 0;
