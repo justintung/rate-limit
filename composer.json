@@ -4,7 +4,8 @@
   "description": "PHP rate limiting library with Token Bucket Algorithm, originally touhonoob/rate-limit",
   "version": "2.0.2",
   "require": {
-    "php": ">=5.6"
+    "php": ">=5.6",
+    "php-coveralls/php-coveralls": "^2.2"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.7",
@@ -48,6 +49,6 @@
     "lint": "@php ./vendor/bin/parallel-lint --exclude vendor/ .",
     "check-format": "@php ./vendor/bin/php-cs-fixer fix --ansi --dry-run --diff",
     "format": "@php ./vendor/bin/php-cs-fixer fix --ansi",
-    "test": "@php ./vendor/bin/phpunit -c tests/phpunit.xml tests/ "
+    "test": "@php ./vendor/bin/phpunit"
   }
 }

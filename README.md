@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/DavidGoodwin/RateLimit.svg)](https://travis-ci.org/DavidGoodwin/RateLimit/)
 
+[![Coverage Status](https://coveralls.io/repos/github/DavidGoodwin/RateLimit/badge.svg?branch=master)](https://coveralls.io/github/DavidGoodwin/RateLimit?branch=master)
+
 PHP Rate Limiting Library With Token Bucket Algorithm with minimal external dependencies.
 
 # Installation
