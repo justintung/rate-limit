@@ -1,8 +1,8 @@
 <?php
 
-namespace PalePurple\RateLimit\Adapter;
+namespace Detain\RateLimit\Adapter;
 
-class Memcached extends \PalePurple\RateLimit\Adapter
+class Memcached extends \Detain\RateLimit\Adapter
 {
 
     /**

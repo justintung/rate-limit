@@ -1,8 +1,8 @@
 <?php
 
-namespace PalePurple\RateLimit\Adapter;
+namespace Detain\RateLimit\Adapter;
 
-use PalePurple\RateLimit\Adapter;
+use Detain\RateLimit\Adapter;
 
 /**
  * @author Peter Chung <touhonoob@gmail.com>

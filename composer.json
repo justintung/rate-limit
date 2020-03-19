@@ -1,7 +1,7 @@
 {
   "type": "library",
-  "name": "palepurple/rate-limit",
-  "description": "PHP rate limiting library with Token Bucket Algorithm, originally touhonoob/rate-limit",
+  "name": "detain/rate-limit",
+  "description": "PHP rate limiting library with Token Bucket and Leaky Bucket Algorithms, son of palepurple/rate-limit, grandson to touhonoob/rate-limit",
   "version": "2.0.2",
   "require": {
     "php": ">=5.6"
@@ -30,16 +30,20 @@
     {
       "name": "David Goodwin",
       "email": "david@palepurple.co.uk"
+    },
+    {
+      "name": "Joe Huss",
+      "email": "detain@interserver.net"
     }
   ],
   "autoload": {
     "psr-4": {
-      "PalePurple\\RateLimit\\": "src/"
+      "Detain\\RateLimit\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "PalePurple\\RateLimit\\Tests\\": "tests/"
+      "Detain\\RateLimit\\Tests\\": "tests/"
     }
   },
   "scripts": {

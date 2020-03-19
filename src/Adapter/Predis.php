@@ -1,11 +1,11 @@
 <?php
 
-namespace PalePurple\RateLimit\Adapter;
+namespace Detain\RateLimit\Adapter;
 
 /**
  * Predis adapter
  */
-class Predis extends \PalePurple\RateLimit\Adapter
+class Predis extends \Detain\RateLimit\Adapter
 {
 
     /**

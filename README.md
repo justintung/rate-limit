@@ -30,12 +30,12 @@ Depending on which adapter you install, you may need to install additional libra
 ````php
 require 'vendor/autoload.php';
 
-use \PalePurple\RateLimit\RateLimit;
-use \PalePurple\RateLimit\Adapter\APC as APCAdapter;
-use \PalePurple\RateLimit\Adapter\Redis as RedisAdapter;
-use \PalePurple\RateLimit\Adapter\Predis as PredisAdapter;
-use \PalePurple\RateLimit\Adapter\Memcached as MemcachedAdapter;
-use \PalePurple\RateLimit\Adapter\Stash as StashAdapter;
+use \Detain\RateLimit\RateLimit;
+use \Detain\RateLimit\Adapter\APC as APCAdapter;
+use \Detain\RateLimit\Adapter\Redis as RedisAdapter;
+use \Detain\RateLimit\Adapter\Predis as PredisAdapter;
+use \Detain\RateLimit\Adapter\Memcached as MemcachedAdapter;
+use \Detain\RateLimit\Adapter\Stash as StashAdapter;
 
 
 $adapter = new APCAdapter(); // Use APC as Storage

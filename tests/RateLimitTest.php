@@ -1,9 +1,9 @@
 <?php
 
-namespace PalePurple\RateLimit\Tests;
+namespace Detain\RateLimit\Tests;
 
-use PalePurple\RateLimit\Adapter;
-use PalePurple\RateLimit\RateLimit;
+use Detain\RateLimit\Adapter;
+use Detain\RateLimit\RateLimit;
 use PHPUnit\Framework\TestCase;
 
 /**
