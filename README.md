@@ -1,10 +1,13 @@
 # RateLimit
 
-[![Build Status](https://travis-ci.org/DavidGoodwin/RateLimit.svg)](https://travis-ci.org/DavidGoodwin/RateLimit/)
+[![Build Status](https://travis-ci.org/detain/RateLimit.svg)](https://travis-ci.org/DavidGoodwin/RateLimit/)
 
-[![Coverage Status](https://coveralls.io/repos/github/DavidGoodwin/RateLimit/badge.svg?branch=master)](https://coveralls.io/github/DavidGoodwin/RateLimit?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/detain/RateLimit/badge.svg?branch=master)](https://coveralls.io/github/detain/RateLimit?branch=master)
 
-PHP Rate Limiting Library With Token Bucket Algorithm with minimal external dependencies.
+PHP Rate Limiting library with both Token Bucket and Leaky Bucket Algorithms, minimal external dependencies, and many storage backends.
+
+- [Token Bucket Algorithm](https://en.wikipedia.org/wiki/Token_bucket)
+- [Leaky Bucket Algorithm](https://en.wikipedia.org/wiki/Leaky_bucket)
 
 # Installation
 
