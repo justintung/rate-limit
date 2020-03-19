@@ -11,14 +11,14 @@ abstract class Adapter
     /**
      * @return bool
      * @param string $key
-     * @param float $value
+     * @param float|mixed $value
      * @param int $ttl - seconds after which this entry will expire e.g 50
      */
     abstract public function set($key, $value, $ttl);
     
     /**
      * @param string $key
-     * @return float
+     * @return float|mixed
      */
     abstract public function get($key);
     

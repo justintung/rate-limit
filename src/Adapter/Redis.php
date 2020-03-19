@@ -21,7 +21,7 @@ class Redis extends \Detain\RateLimit\Adapter
 
     /**
      * @param string $key
-     * @param float $value
+     * @param float|mixed $value
      * @param int $ttl
      * @return bool
      */
@@ -31,7 +31,7 @@ class Redis extends \Detain\RateLimit\Adapter
     }
 
     /**
-     * @return float
+     * @return float|mixed
      * @param string $key
      */
     public function get($key)

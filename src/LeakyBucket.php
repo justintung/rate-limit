@@ -270,7 +270,7 @@ class LeakyBucket
     {
         try {
             $this->storage->del(static::LEAKY_BUCKET_KEY_PREFIX . $this->key . static::LEAKY_BUCKET_KEY_POSTFIX);
-        } catch (Exception $ex) {
+        } catch (\Exception $ex) {
             throw new \Exception(sprintf('Could not save "%s" to storage provider.', $this->key));
         }
     }
@@ -286,8 +286,8 @@ class LeakyBucket
     private function set(array $bucket, $ttl = 0)
     {
         try {
-            $this->storage->store(static::LEAKY_BUCKET_KEY_PREFIX . $this->key . static::LEAKY_BUCKET_KEY_POSTFIX, $bucket, $ttl);
-        } catch (Exception $ex) {
+            $this->storage->set(static::LEAKY_BUCKET_KEY_PREFIX . $this->key . static::LEAKY_BUCKET_KEY_POSTFIX, $bucket, $ttl);
+        } catch (\Exception $ex) {
             throw new \Exception(sprintf('Could not save "%s" to storage provider.', $this->key));
         }
     }
@@ -303,7 +303,7 @@ class LeakyBucket
     {
         try {
             return $this->storage->get(static::LEAKY_BUCKET_KEY_PREFIX . $this->key . static::LEAKY_BUCKET_KEY_POSTFIX);
-        } catch (Exception $ex) {
+        } catch (\Exception $ex) {
             throw new \Exception(sprintf('Could not save "%s" to storage provider.', $this->key));
         }
     }
