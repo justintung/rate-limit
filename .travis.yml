@@ -25,4 +25,4 @@ script:
   - composer build 
 
 after_success:
-  - travis_retry php vendor/bin/php-coveralls -x clover.xml
+  - travis_retry php vendor/bin/php-coveralls -x clover.xml -o .
