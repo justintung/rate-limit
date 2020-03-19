@@ -95,6 +95,7 @@ class LeakyBucket
      * Fills the bucket with a given amount of drops.
      *
      * @param int $drops Amount of drops that have to be added to the bucket
+     * @return LeakyBucket
      */
     public function fill($drops = 1)
     {
@@ -114,12 +115,14 @@ class LeakyBucket
         $this->bucket['drops'] += $drops;
 
         $this->overflow();
+        return $this;
     }
 
     /**
      * Spills a few drops from the bucket.
      *
      * @param int $drops Amount of drops to spill from the bucket
+     * @return LeakyBucket
      */
     public function spill($drops = 1)
     {
@@ -132,16 +135,19 @@ class LeakyBucket
         if ($this->bucket['drops'] < 0) {
             $this->bucket['drops'] = 0;
         }
+        return $this;
     }
 
     /**
      * Attach aditional data to the bucket.
      *
      * @param array $data The data to be attached to this bucket
+     * @return LeakyBucket
      */
     public function setData(array $data)
     {
         $this->bucket['data'] = (array) $data;
+        return $this;
     }
 
     /**
@@ -206,10 +212,13 @@ class LeakyBucket
 
     /**
      * Updates the bucket's timestamp
+     *
+     * @return LeakyBucket
      */
     public function touch()
     {
         $this->bucket['time'] = microtime(true);
+        return $this;
     }
 
     /**
@@ -224,6 +233,7 @@ class LeakyBucket
 
     /**
      * Calculates how much the bucket has leaked.
+     * @return LeakyBucket
      */
     public function leak()
     {
@@ -239,32 +249,38 @@ class LeakyBucket
         if ($this->bucket['drops'] < 0) {
             $this->bucket['drops'] = 0;
         }
+        return $this;
     }
 
     /**
      * Removes the overflow if present.
+     * @return LeakyBucket
      */
     public function overflow()
     {
         if ($this->bucket['drops'] > $this->settings['capacity']) {
             $this->bucket['drops'] = $this->settings['capacity'];
         }
+        return $this;
     }
 
     /**
      * Saves the bucket to the Adapter used.
+     * @return LeakyBucket
      */
     public function save()
     {
         // Set the timestamp
         $this->touch();
         $this->set($this->bucket, $this->settings['capacity'] / $this->settings['leak'] * 1.5);
+        return $this;
     }
 
     /**
      * Resets the bucket.
      *
      * @throws \Exception
+     * @return LeakyBucket
      */
     public function reset()
     {
@@ -273,15 +289,16 @@ class LeakyBucket
         } catch (\Exception $ex) {
             throw new \Exception(sprintf('Could not save "%s" to storage provider.', $this->key));
         }
+        return $this;
     }
 
     /**
      * Sets the active bucket's value
      *
      * @param array $bucket The bucket's contents
-     * @param int   $ttl    The time to live for the bucket
-     *
+     * @param int   $ttl    The time to live for the bucket	 *
      * @throws \Exception
+     * @return LeakyBucket
      */
     private function set(array $bucket, $ttl = 0)
     {
@@ -290,6 +307,7 @@ class LeakyBucket
         } catch (\Exception $ex) {
             throw new \Exception(sprintf('Could not save "%s" to storage provider.', $this->key));
         }
+        return $this;
     }
 
     /**
