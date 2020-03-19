@@ -17,22 +17,6 @@ class RateLimitTest extends TestCase
     const PERIOD = 2;
 
     /**
-     * @requires extension apc
-     */
-    public function testCheckAPC()
-    {
-        if (!extension_loaded('apc')) {
-            $this->markTestSkipped("apc extension not installed");
-        }
-        if (ini_get('apc.enable_cli') == 0) {
-            $this->markTestSkipped("apc.enable_cli != 1; can't change at runtime");
-        }
-
-        $adapter = new Adapter\APC();
-        $this->check($adapter);
-    }
-
-    /**
      * @requires extension apcu
      */
     public function testCheckAPCu()

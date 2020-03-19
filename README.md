@@ -40,7 +40,7 @@ composer.phar require detain/rate-limit
 
 The RateLimiter needs to know where to get/set data. 
 
-Depending on which adapter you install, you may need to install additional libraries (predis/predis or tedivm/stash) or PHP extensions (e.g. Redis, Memcache, APC)
+Depending on which adapter you install, you may need to install additional libraries (predis/predis or tedivm/stash) or PHP extensions (e.g. Redis, Memcache, APCu)
 
 
 - [APCu](https://pecl.php.net/package/APCu)
@@ -56,7 +56,7 @@ Depending on which adapter you install, you may need to install additional libra
 require 'vendor/autoload.php';
 
 use \Detain\RateLimit\RateLimit;
-use \Detain\RateLimit\Adapter\APC as APCAdapter;
+use \Detain\RateLimit\Adapter\APCu as APCAdapter;
 use \Detain\RateLimit\Adapter\Redis as RedisAdapter;
 use \Detain\RateLimit\Adapter\Predis as PredisAdapter;
 use \Detain\RateLimit\Adapter\Memcached as MemcachedAdapter;
