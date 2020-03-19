@@ -23,7 +23,6 @@
 	"tedivm/stash": "^0.15",
 	"predis/predis": "^1.1",
 	"ext-redis": "^2.2",
-	"ext-apc": "^4.0",
 	"ext-apcu": "^4.0"
   },
   "license": "MIT",
@@ -50,6 +49,6 @@
 	"lint": "@php ./vendor/bin/parallel-lint --exclude vendor/ .",
 	"check-format": "@php ./vendor/bin/php-cs-fixer fix --ansi --dry-run --diff",
 	"format": "@php ./vendor/bin/php-cs-fixer fix --ansi",
-	"test": "@php -d apc.enable_cli=1 ./vendor/bin/phpunit"
+	"test": "@php ./vendor/bin/phpunit"
   }
 }
