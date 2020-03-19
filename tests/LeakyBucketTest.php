@@ -10,8 +10,7 @@
 namespace Detain\RateLimit\Tests;
 
 use Detain\RateLimit\LeakyBucket;
-use Detain\RateLimit\Storage\RedisStorage;
-use Detain\RateLimit\Storage\StorageInterface;
+use Detain\RateLimit\Adapter;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -26,17 +25,19 @@ class LeakyBucketTest extends TestCase
     /**
      * Class constructor.
      *
-     * @param StorageInterface $storage Storage to use. Defaults to RedisStorage
+     * @param Adapter $storage Storage to use. Defaults to RedisStorage
      * @param array            $options The bucket options to use
      *
-     * @return \LeakyBucket\LeakyBucket
+     * @return \Detain\RateLimit\LeakyBucket
      */
-    protected function getCleanBucket(StorageInterface $storage = null, array $options = [])
+    protected function getCleanBucket(Adapter $storage = null, array $options = [])
     {
-        $storage = $storage ?: new RedisStorage();
+        $m = new \Memcached();
+        $m->addServer('localhost', 11211);
+        $adapter = new Adapter\Memcached($m);
         $bucket  = new LeakyBucket(
             'leakybucket-test',
-            $storage,
+            $adapter,
             $options
         );
 
