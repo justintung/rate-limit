@@ -15,10 +15,9 @@ build:
         override:
             - composer self-update
             - composer install --no-interaction --dev --prefer-dist --ansi
-    coverage:
-        tests:
-            override:
-                - command: composer build
-                  coverage:
-                      file: clover.xml
-                      format: clover
+    tests:
+        override:
+            - command: composer build
+              coverage:
+                  file: clover.xml
+                  format: clover
