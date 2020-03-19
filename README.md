@@ -7,7 +7,7 @@
 PHP Rate Limiting library with both Token Bucket and Leaky Bucket Algorithms, minimal external dependencies, and many storage backends.
 
 - [x] [Token Bucket Algorithm](https://en.wikipedia.org/wiki/Token_bucket)
-- [ ] [Leaky Bucket Algorithm](https://en.wikipedia.org/wiki/Leaky_bucket)
+- [x] [Leaky Bucket Algorithm](https://en.wikipedia.org/wiki/Leaky_bucket)
 
 # Installation
 
