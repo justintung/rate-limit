@@ -1,0 +1,27 @@
+filter:
+    excluded_paths:
+        - tests/*
+build:
+    environment:
+        php: 7.1
+    cache:
+        disabled:             false
+        directories:
+            - ~/.composer/cache
+            - tmp/
+            - vendor/
+            - composer.lock
+    dependencies:
+        override:
+            - composer self-update
+            - composer install --no-interaction --dev --prefer-dist --ansi
+    tests:
+        override:
+            #- jshint-run $(ls public_html/js/*.js)
+            #- shellcheck-run -s bash $(ls scripts/*/*.sh)
+            #- csslint-run --exclude-list=public_html/css/domains.css,public_html/css/minified,public_html/css/reset.css,public_html/css/price_win.css public_html/css
+            -
+                command: 'composer build'
+                coverage:
+                    file: 'clover.xml'
+                    format: 'clover'
