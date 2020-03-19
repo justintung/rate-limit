@@ -84,11 +84,10 @@ if ($rateLimit->check($id)) {
 ``` php
 <?php
 
-use LeakyBucket\LeakyBucket;
-use LeakyBucket\Storage\RedisStorage;
+use \Detain\RateLimit\LeakyBucket;
+use \Detain\RateLimit\Adapter\Redis as RedisAdapter;
 
-// Define which storage to use
-$storage = new RedisStorage();
+$adapter = new RedisAdapter((new \Redis()->connect('localhost'))); // Use Redis as Storage
 
 // Define the bucket
 $settings = [
@@ -166,6 +165,9 @@ $bucket->save();
 
 # References
 
+- [this code is forked from DavidGoodwin/RateLimit](https://github.com/DavidGoodwin/RateLimit)
+- [which was built on touhonoob/RateLimit](https://github.com/touhonoob/RateLimit)
+- [and then i merged it with jeroenvisser101/LeakyBucket](https://github.com/jeroenvisser101/LeakyBucket)
+- [Token Bucket Algorithm](http://en.wikipedia.org/wiki/Token_bucket)
+- [Leaky Bucket Algorithm](https://en.wikipedia.org/wiki/Leaky_bucket)
 - [stackoverflow post about Rate Limiting](http://stackoverflow.com/a/668327/670662)
-- [wikipedia token bucket](http://en.wikipedia.org/wiki/Token_bucket)
-- [this code is forked from here...](https://github.com/touhonoob/RateLimit)
