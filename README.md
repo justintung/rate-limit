@@ -4,6 +4,18 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/detain/RateLimit/badge.svg?branch=master)](https://coveralls.io/github/detain/RateLimit?branch=master)
 
+[![Latest Stable Version](https://poser.pugx.org/detain/RateLimit/version)](https://packagist.org/packages/detain/RateLimit)
+[![Total Downloads](https://poser.pugx.org/detain/RateLimit/downloads)](https://packagist.org/packages/detain/RateLimit)
+[![Latest Unstable Version](https://poser.pugx.org/detain/RateLimit/v/unstable)](//packagist.org/packages/detain/RateLimit)
+[![License](https://poser.pugx.org/detain/RateLimit/license)](https://packagist.org/packages/detain/RateLimit)
+[![Monthly Downloads](https://poser.pugx.org/detain/RateLimit/d/monthly)](https://packagist.org/packages/detain/RateLimit)
+[![Daily Downloads](https://poser.pugx.org/detain/RateLimit/d/daily)](https://packagist.org/packages/detain/RateLimit)
+[![Reference Status](https://www.versioneye.com/php/detain:RateLimit/reference_badge.svg?style=flat)](https://www.versioneye.com/php/detain:RateLimit/references)
+[![Code Climate](https://codeclimate.com/github/detain/RateLimit/badges/gpa.svg)](https://codeclimate.com/github/detain/RateLimit)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/detain/RateLimit/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/detain/RateLimit/?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/659523f63e16487ea71f6b763908d09e)](https://www.codacy.com/app/detain/RateLimit)
+
+
 PHP Rate Limiting library with both Token Bucket and Leaky Bucket Algorithms, minimal external dependencies, and many storage backends.
 
 - [x] [Token Bucket Algorithm](https://en.wikipedia.org/wiki/Token_bucket) Token Bucket is an algorithm which works as follows:
