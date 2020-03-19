@@ -5,6 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/detain/RateLimit/badges/gpa.svg)](https://codeclimate.com/github/detain/RateLimit)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/detain/RateLimit/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/detain/RateLimit/?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/659523f63e16487ea71f6b763908d09e)](https://www.codacy.com/app/detain/RateLimit)
+
 [![Latest Stable Version](https://poser.pugx.org/detain/rate-limit/version)](https://packagist.org/packages/detain/rate-limit)
 [![Total Downloads](https://poser.pugx.org/detain/rate-limit/downloads)](https://packagist.org/packages/detain/rate-limit)
 [![Latest Unstable Version](https://poser.pugx.org/detain/rate-limit/v/unstable)](//packagist.org/packages/detain/rate-limit)
@@ -16,12 +17,12 @@ PHP Rate Limiting library with both Token Bucket and Leaky Bucket Algorithms, mi
 
 - [x] [Token Bucket Algorithm](https://en.wikipedia.org/wiki/Token_bucket) Token Bucket is an algorithm which works as follows:
   - There is a bucket.
-  - A token is added to the bucket every 1 / r {\displaystyle 1/r} 1/r seconds.
-  - The bucket can hold at the most b {\displaystyle b} b tokens. If a token arrives when the bucket is full, it is discarded.
+  - A token is added to the bucket every 1/r seconds.
+  - The bucket can hold at the most b tokens. If a token arrives when the bucket is full, it is discarded.
   - When a packet (network layer PDU) of n bytes arrives,
-    - If at least n tokens are in the bucket, n tokens are removed from the bucket, and the packet is sent to the network.
-    - if fewer than n tokens are available, no tokens are removed from the bucket, and the packet is considered to be non-conformant.
-    
+	- If at least n tokens are in the bucket, n tokens are removed from the bucket, and the packet is sent to the network.
+	- if fewer than n tokens are available, no tokens are removed from the bucket, and the packet is considered to be non-conformant.
+	
 - [x] [Leaky Bucket Algorithm](https://en.wikipedia.org/wiki/Leaky_bucket) Leaky Bucket is an algorithm which works as follows:
   - There is a bucket.
   - The bucket has a defined leak and defined capacity.
@@ -99,8 +100,8 @@ $adapter = new RedisAdapter((new \Redis()->connect('localhost'))); // Use Redis 
 
 // Define the bucket
 $settings = [
-    'capacity' => 10,
-    'leak'     => 1
+	'capacity' => 10,
+	'leak'     => 1
 ];
 
 // Create the bucket
@@ -111,8 +112,8 @@ $bucket->fill();
 
 // Check if it's full
 if ($bucket->isFull()) {
-    header('HTTP/1.1 429 Too Many Requests');
-    exit '<!doctype html><html><body><h1>429 Too Many Requests</h1><p>You seem to be doing a lot of requests. You\'re now cooling down.</p></body></html>';
+	header('HTTP/1.1 429 Too Many Requests');
+	exit '<!doctype html><html><body><h1>429 Too Many Requests</h1><p>You seem to be doing a lot of requests. You\'re now cooling down.</p></body></html>';
 }
 
 // ...
@@ -135,9 +136,9 @@ $timestamp = $bucket->getLastTimestamp();
 
 // Set additional data
 $bucket->setData(
-    [
-        'timeout' => 3600
-    ]
+	[
+		'timeout' => 3600
+	]
 );
 
 // Get additional data
