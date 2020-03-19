@@ -16,7 +16,7 @@ services:
   - memcached
 
 before_script:
-  - phpenv config-rm xdebug.ini || true
+#  - phpenv config-rm xdebug.ini || true
   - phpenv config-add tests/php.ini
 
 install:
