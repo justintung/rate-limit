@@ -27,7 +27,7 @@ class Redis extends \Detain\RateLimit\Adapter
      */
     public function set($key, $value, $ttl)
     {
-        return $this->redis->set($key, (string)$value, $ttl);
+        return $this->redis->set($key, (string) $value, $ttl);
     }
 
     /**
@@ -36,7 +36,7 @@ class Redis extends \Detain\RateLimit\Adapter
      */
     public function get($key)
     {
-        return (float)$this->redis->get($key);
+        return (float) $this->redis->get($key);
     }
 
     /**

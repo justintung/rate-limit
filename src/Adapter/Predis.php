@@ -36,16 +36,16 @@ class Predis extends \Detain\RateLimit\Adapter
      */
     public function get($key)
     {
-        return (float)$this->redis->get($key);
+        return (float) $this->redis->get($key);
     }
 
     public function exists($key)
     {
-        return (bool)$this->redis->exists($key);
+        return (bool) $this->redis->exists($key);
     }
 
     public function del($key)
     {
-        return (bool)$this->redis->del([$key]);
+        return (bool) $this->redis->del([$key]);
     }
 }
