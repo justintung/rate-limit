@@ -21,9 +21,11 @@ PHP Rate Limiting library with both Token Bucket and Leaky Bucket Algorithms, mi
   - Overflows when full, will not add other drops to the bucket.
   
 
-# Installation
-
-```composer require detain/rate-limit```
+# Installing via Composer
+````shell
+curl -sS https://getcomposer.org/installer | php
+composer.phar require detain/rate-limit
+````
 
 # Storage Adapters
 
@@ -161,14 +163,6 @@ $bucket->reset();
 // Force save
 $bucket->save();
 ```
-
-
-
-# Installing via Composer
-````shell
-curl -sS https://getcomposer.org/installer | php
-composer.phar require detain/rate-limit
-````
 
 # References
 
