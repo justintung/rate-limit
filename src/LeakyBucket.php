@@ -36,7 +36,7 @@ class LeakyBucket
     /**
      * The current bucket.
      *
-     * @var array
+     * @var array<string, mixed>
      */
     private $bucket;
 
@@ -50,7 +50,7 @@ class LeakyBucket
     /**
      * Array containing default settings.
      *
-     * @var array
+     * @var array<string, mixed>
      */
     private static $defaults = [
         'capacity' => 10,
@@ -60,7 +60,7 @@ class LeakyBucket
     /**
      * The settings for this bucket.
      *
-     * @var array
+     * @var array<string, mixed>
      */
     private $settings = [];
 
@@ -69,7 +69,7 @@ class LeakyBucket
      *
      * @param string           $key      The bucket key
      * @param Adapter $storage  The storage provider that has to be used
-     * @param array            $settings The settings to be set
+     * @param array<string, mixed> $settings The settings to be set
      */
     public function __construct($key, Adapter $storage, array $settings = [])
     {
@@ -141,19 +141,19 @@ class LeakyBucket
     /**
      * Attach aditional data to the bucket.
      *
-     * @param array $data The data to be attached to this bucket
+     * @param mixed $data The data to be attached to this bucket
      * @return LeakyBucket
      */
-    public function setData(array $data)
+    public function setData($data)
     {
-        $this->bucket['data'] = (array) $data;
+        $this->bucket['data'] = $data;
         return $this;
     }
 
     /**
      * Get additional data from the bucket.
      *
-     * @return array
+     * @return mixed
      */
     public function getData()
     {
@@ -272,7 +272,7 @@ class LeakyBucket
     {
         // Set the timestamp
         $this->touch();
-        $this->set($this->bucket, $this->settings['capacity'] / $this->settings['leak'] * 1.5);
+        $this->set($this->bucket, intval($this->settings['capacity'] / $this->settings['leak'] * 1.5));
         return $this;
     }
 
@@ -295,7 +295,7 @@ class LeakyBucket
     /**
      * Sets the active bucket's value
      *
-     * @param array $bucket The bucket's contents
+     * @param array<string, mixed> $bucket The bucket's contents
      * @param int   $ttl    The time to live for the bucket	 *
      * @throws \Exception
      * @return LeakyBucket
@@ -313,7 +313,7 @@ class LeakyBucket
     /**
      * Gets the active bucket's value
      *
-     * @return array
+     * @return array<string, mixed>
      *
      * @throws \Exception
      */
