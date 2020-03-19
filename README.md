@@ -23,7 +23,7 @@ PHP Rate Limiting library with both Token Bucket and Leaky Bucket Algorithms, mi
 
 # Installation
 
-```composer require palepurple/rate-limit```
+```composer require detain/rate-limit```
 
 # Storage Adapters
 
@@ -167,7 +167,7 @@ $bucket->save();
 # Installing via Composer
 ````shell
 curl -sS https://getcomposer.org/installer | php
-composer.phar require palepurple/rate-limit
+composer.phar require detain/rate-limit
 ````
 
 # References
