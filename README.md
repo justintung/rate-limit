@@ -1,4 +1,4 @@
-# RateLimit
+# rate-limit
 
 [![Build Status](https://travis-ci.org/detain/rate-limit.svg)](https://travis-ci.org/detain/rate-limit/)
 [![Coverage Status](https://coveralls.io/repos/github/detain/rate-limit/badge.svg?branch=master)](https://coveralls.io/github/detain/rate-limit?branch=master)
@@ -15,6 +15,8 @@
 
 PHP Rate Limiting library with both Token Bucket and Leaky Bucket Algorithms, minimal external dependencies, and many storage backends.
 
+# Algorithms
+
 - [x] [Token Bucket Algorithm](https://en.wikipedia.org/wiki/Token_bucket) Token Bucket is an algorithm which works as follows:
   - There is a bucket.
   - A token is added to the bucket every 1/r seconds.
@@ -30,12 +32,6 @@ PHP Rate Limiting library with both Token Bucket and Leaky Bucket Algorithms, mi
   - Overflows when full, will not add other drops to the bucket.
   
 
-# Installing via Composer
-````shell
-curl -sS https://getcomposer.org/installer | php
-composer.phar require detain/rate-limit
-````
-
 # Storage Adapters
 
 The RateLimiter needs to know where to get/set data. 
@@ -48,6 +44,13 @@ Depending on which adapter you install, you may need to install additional libra
 - [Stash](http://www.stashphp.com) (This supports many drivers - see http://www.stashphp.com/Drivers.html )
 - [Memcached](http://php.net/manual/en/intro.memcached.php)
 
+
+# Installing via Composer
+
+````shell
+curl -sS https://getcomposer.org/installer | php
+composer.phar require detain/rate-limit
+````
 
 # Usage
 
@@ -174,9 +177,19 @@ $bucket->save();
 
 # References
 
+## Continuation or Expansion of these Projects
+
 - [this code is forked from DavidGoodwin/RateLimit](https://github.com/DavidGoodwin/RateLimit)
 - [which was built on touhonoob/RateLimit](https://github.com/touhonoob/RateLimit)
 - [and then i merged it with jeroenvisser101/LeakyBucket](https://github.com/jeroenvisser101/LeakyBucket)
+
+## Knowledge
+
 - [Token Bucket Algorithm](http://en.wikipedia.org/wiki/Token_bucket)
 - [Leaky Bucket Algorithm](https://en.wikipedia.org/wiki/Leaky_bucket)
 - [stackoverflow post about Rate Limiting](http://stackoverflow.com/a/668327/670662)
+
+## PSR-7 Middleware Handlers to Base the Future PSR7 Support Off Of
+
+- [nikolaposa/rate-limit](https://github.com/nikolaposa/rate-limit) 🚔 Standalone component that facilitates rate-limiting functionality. Also provides a middleware designed for API and/or other application endpoints. 
+- [robwittman/leaky-bucket-rate-limiter](https://github.com/robwittman/leaky-bucket-rate-limiter) PSR-7 Leaky Bucket Rate Limiter - This middleware enables API Rate-Limiting based on a Leaky Bucket algorithm.
