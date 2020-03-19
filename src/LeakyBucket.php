@@ -9,10 +9,6 @@
 
 namespace Detain\RateLimit;
 
-use LeakyBucket\Exception\StorageException;
-use LeakyBucket\Storage\StorageInterface;
-use SebastianBergmann\Exporter\Exception;
-
 /**
  * Implements the Leak Bucket algorithm.
  *
@@ -45,9 +41,9 @@ class LeakyBucket
     private $bucket;
 
     /**
-     * A StorageInterface where the bucket data will be stored.
+     * A Adapter where the bucket data will be stored.
      *
-     * @var StorageInterface
+     * @var Adapter
      */
     private $storage;
 
@@ -72,10 +68,10 @@ class LeakyBucket
      * Class constructor.
      *
      * @param string           $key      The bucket key
-     * @param StorageInterface $storage  The storage provider that has to be used
+     * @param Adapter $storage  The storage provider that has to be used
      * @param array            $settings The settings to be set
      */
-    public function __construct($key, StorageInterface $storage, array $settings = [])
+    public function __construct($key, Adapter $storage, array $settings = [])
     {
         $this->key     = $key;
         $this->storage = $storage;
@@ -256,7 +252,7 @@ class LeakyBucket
     }
 
     /**
-     * Saves the bucket to the StorageInterface used.
+     * Saves the bucket to the Adapter used.
      */
     public function save()
     {
@@ -268,14 +264,14 @@ class LeakyBucket
     /**
      * Resets the bucket.
      *
-     * @throws StorageException
+     * @throws \Exception
      */
     public function reset()
     {
         try {
             $this->storage->purge(static::LEAKY_BUCKET_KEY_PREFIX . $this->key . static::LEAKY_BUCKET_KEY_POSTFIX);
         } catch (Exception $ex) {
-            throw new StorageException(sprintf('Could not save "%s" to storage provider.', $this->key));
+            throw new \Exception(sprintf('Could not save "%s" to storage provider.', $this->key));
         }
     }
 
@@ -285,14 +281,14 @@ class LeakyBucket
      * @param array $bucket The bucket's contents
      * @param int   $ttl    The time to live for the bucket
      *
-     * @throws StorageException
+     * @throws \Exception
      */
     private function set(array $bucket, $ttl = 0)
     {
         try {
             $this->storage->store(static::LEAKY_BUCKET_KEY_PREFIX . $this->key . static::LEAKY_BUCKET_KEY_POSTFIX, $bucket, $ttl);
         } catch (Exception $ex) {
-            throw new StorageException(sprintf('Could not save "%s" to storage provider.', $this->key));
+            throw new \Exception(sprintf('Could not save "%s" to storage provider.', $this->key));
         }
     }
 
@@ -301,14 +297,14 @@ class LeakyBucket
      *
      * @return array
      *
-     * @throws StorageException
+     * @throws \Exception
      */
     private function get()
     {
         try {
             return $this->storage->fetch(static::LEAKY_BUCKET_KEY_PREFIX . $this->key . static::LEAKY_BUCKET_KEY_POSTFIX);
         } catch (Exception $ex) {
-            throw new StorageException(sprintf('Could not save "%s" to storage provider.', $this->key));
+            throw new \Exception(sprintf('Could not save "%s" to storage provider.', $this->key));
         }
     }
 }
