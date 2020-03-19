@@ -1,10 +1,10 @@
 # RateLimit
 
-[![Build Status](https://travis-ci.org/detain/RateLimit.svg)](https://travis-ci.org/detain/RateLimit/)
-[![Coverage Status](https://coveralls.io/repos/github/detain/RateLimit/badge.svg?branch=master)](https://coveralls.io/github/detain/RateLimit?branch=master)
-[![Code Climate](https://codeclimate.com/github/detain/RateLimit/badges/gpa.svg)](https://codeclimate.com/github/detain/RateLimit)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/detain/RateLimit/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/detain/RateLimit/?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/659523f63e16487ea71f6b763908d09e)](https://www.codacy.com/app/detain/RateLimit)
+[![Build Status](https://travis-ci.org/detain/rate-limit.svg)](https://travis-ci.org/detain/rate-limit/)
+[![Coverage Status](https://coveralls.io/repos/github/detain/rate-limit/badge.svg?branch=master)](https://coveralls.io/github/detain/rate-limit?branch=master)
+[![Code Climate](https://codeclimate.com/github/detain/rate-limit/badges/gpa.svg)](https://codeclimate.com/github/detain/rate-limit)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/detain/rate-limit/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/detain/rate-limit/?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/659523f63e16487ea71f6b763908d09e)](https://www.codacy.com/app/detain/rate-limit)
 
 [![Latest Stable Version](https://poser.pugx.org/detain/rate-limit/version)](https://packagist.org/packages/detain/rate-limit)
 [![Total Downloads](https://poser.pugx.org/detain/rate-limit/downloads)](https://packagist.org/packages/detain/rate-limit)
