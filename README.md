@@ -6,8 +6,20 @@
 
 PHP Rate Limiting library with both Token Bucket and Leaky Bucket Algorithms, minimal external dependencies, and many storage backends.
 
-- [x] [Token Bucket Algorithm](https://en.wikipedia.org/wiki/Token_bucket)
-- [x] [Leaky Bucket Algorithm](https://en.wikipedia.org/wiki/Leaky_bucket)
+- [x] [Token Bucket Algorithm](https://en.wikipedia.org/wiki/Token_bucket) Token Bucket is an algorithm which works as follows:
+  - There is a bucket.
+  - A token is added to the bucket every 1 / r {\displaystyle 1/r} 1/r seconds.
+  - The bucket can hold at the most b {\displaystyle b} b tokens. If a token arrives when the bucket is full, it is discarded.
+  - When a packet (network layer PDU) of n bytes arrives,
+    - If at least n tokens are in the bucket, n tokens are removed from the bucket, and the packet is sent to the network.
+    - if fewer than n tokens are available, no tokens are removed from the bucket, and the packet is considered to be non-conformant.
+    
+- [x] [Leaky Bucket Algorithm](https://en.wikipedia.org/wiki/Leaky_bucket) Leaky Bucket is an algorithm which works as follows:
+  - There is a bucket.
+  - The bucket has a defined leak and defined capacity.
+  - The bucket leaks at a constant rate.
+  - Overflows when full, will not add other drops to the bucket.
+  
 
 # Installation
 
@@ -26,7 +38,9 @@ Depending on which adapter you install, you may need to install additional libra
 - [Memcached](http://php.net/manual/en/intro.memcached.php)
 
 
-# Example
+# Usage
+
+## Token Bucket
 ````php
 require 'vendor/autoload.php';
 
@@ -62,14 +76,7 @@ if ($rateLimit->check($id)) {
 }
 ````
 
-Leaky Bucket is an algorithm which works as follows:
-
-1. There is a bucket.
-1. The bucket has a defined leak and defined capacity.
-1. The bucket leaks at a constant rate.
-1. Overflows when full, will not add other drops to the bucket.
-
-## Usage
+## Leaky Bucket
 
 ### Basic usage
 ``` php
