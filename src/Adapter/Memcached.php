@@ -17,6 +17,7 @@ class Memcached extends \Detain\RateLimit\Adapter
 
     public function set($key, $value, $ttl)
     {
+        error_log('memcacheds set "'.$key.'" to "'.$value.'"');
         return $this->memcached->set($key, $value, $ttl);
     }
 
@@ -27,6 +28,7 @@ class Memcached extends \Detain\RateLimit\Adapter
     public function get($key)
     {
         $val = $this->_get($key);
+        error_log('memcacheds get "'.$key.'" = "'.$val.'" or float = "'.((float)$val).'"');
         return (float) $val;
     }
 
