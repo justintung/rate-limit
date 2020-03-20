@@ -95,8 +95,7 @@ class RateLimitTest extends TestCase
         // All should work, but bucket will be empty at the end.
         for ($i = 0; $i < self::MAX_REQUESTS; $i++) {
             // Calling check reduces the counter each time.
-            error_log("checking if ".(self::MAX_REQUESTS - $i)." = ".$rateLimit->getAllowance($label));
-            $this->assertTrue(abs((self::MAX_REQUESTS - $i) - $rateLimit->getAllowance($label)) <= 1);
+            $this->assertEquals(self::MAX_REQUESTS - $i, $rateLimit->getAllowance($label));
             $this->assertTrue($rateLimit->check($label));
         }
 
