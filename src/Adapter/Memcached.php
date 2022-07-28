@@ -4,7 +4,6 @@ namespace Detain\RateLimit\Adapter;
 
 class Memcached extends \Detain\RateLimit\Adapter
 {
-
     /**
      * @var \Memcached
      */

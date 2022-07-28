@@ -19,12 +19,12 @@ class LeakyBucket
     /**
      * Bucket key's prefix.
      */
-    const LEAKY_BUCKET_KEY_PREFIX = 'leakybucket:v1:';
+    public const LEAKY_BUCKET_KEY_PREFIX = 'leakybucket:v1:';
 
     /**
      * Bucket key's postfix.
      */
-    const LEAKY_BUCKET_KEY_POSTFIX = ':bucket';
+    public const LEAKY_BUCKET_KEY_POSTFIX = ':bucket';
 
     /**
      * The key to the bucket.

@@ -7,7 +7,6 @@ namespace Detain\RateLimit\Adapter;
  */
 class Predis extends \Detain\RateLimit\Adapter
 {
-
     /**
      * @var \Predis\ClientInterface
      */

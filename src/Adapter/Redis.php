@@ -8,7 +8,6 @@ namespace Detain\RateLimit\Adapter;
  */
 class Redis extends \Detain\RateLimit\Adapter
 {
-
     /**
      * @var \Redis
      */

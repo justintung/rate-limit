@@ -12,9 +12,9 @@ use PHPUnit\Framework\TestCase;
  */
 class RateLimitTest extends TestCase
 {
-    const NAME = "RateLimitTest";
-    const MAX_REQUESTS = 10;
-    const PERIOD = 2;
+    public const NAME = "RateLimitTest";
+    public const MAX_REQUESTS = 10;
+    public const PERIOD = 2;
 
     /**
      * @requires extension apcu

@@ -8,7 +8,6 @@ namespace Detain\RateLimit;
  */
 class RateLimit
 {
-
     /**
      *
      * @var string
